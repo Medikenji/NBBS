@@ -11,6 +11,8 @@ void input() {
 int main() {
   // start variables
   int tick = 0;
+  int firstArmyCasualties = 0;
+  int secondArmyCasualties = 0;
   float battleDuration;
   float firstArmyAmount;
   float firstArmyMorale;
@@ -23,7 +25,8 @@ int main() {
   // simulation start
   while (true) {
     // start instructions and user input
-    printf("Battle duration dictates how many tick the battle will last.\nThe default value is 1, 2 is twice as fast et cetera.\nFor smaller battles you can decrease it and for larger battles you can increase it to your preference.\n");
+    printf("Battle duration dictates how many tick the battle will last.\nThe default value is 1, 2 is twice as fast and 0.5 is twice as long and et cetera.\nFor smaller battles you can decrease it and for larger battles you can increase it to your preference.\n");
+    printf("\n");
     text("Enter battle duration: ", &battleDuration);
     system("cls");
     text("Enter first army amount: ", &firstArmyAmount);
@@ -42,21 +45,38 @@ int main() {
     while (firstArmy->checkAlive() && secondArmy->checkAlive()) {
       printf("First Army: %i\n", firstArmy->amount);
       printf("Second Army: %i\n", secondArmy->amount);
+      printf("\033[0;31m");
+      printf("First Army lost %i\n", firstArmyCasualties);
+      printf("Second Army lost %i\n", secondArmyCasualties);
+      printf("\033[0m");
       system("cls");
-      secondArmy->amount -= ((firstArmy->getCombatPower() / secondArmy->getSurvivability())) * battleDuration;
-      firstArmy->amount -= ((secondArmy->getCombatPower() / firstArmy->getSurvivability())) * battleDuration;
+      firstArmyCasualties = ((firstArmy->getCombatPower() / secondArmy->getSurvivability())) * battleDuration;
+      secondArmyCasualties = ((secondArmy->getCombatPower() / firstArmy->getSurvivability())) * battleDuration;
+      secondArmy->amount -= secondArmyCasualties;
+      firstArmy->amount -= firstArmyCasualties;
       firstArmy->recalculate();
       secondArmy->recalculate();
       tick++;
     }
     if (!firstArmy->checkAlive()) {
-      printf("First Army gave up with %i casualties\n", firstArmy->casualties());
-      printf("Second army had %i casualties\n", secondArmy->casualties());
+      printf("First Army gave up with ");
+      printf("\033[0;31m");
+      printf("%i casualties\n", firstArmy->casualties());
+      printf("\033[0m");
+      printf("Second army had ");
+      printf("\033[0;31m");
+      printf("%i casualties\n", secondArmy->casualties());
+      printf("\033[0m");
       printf("Battle lasted %i ticks\n", tick);
-    }
-    if (!secondArmy->checkAlive()) {
-      printf("Second Army gave up with %i casualties\n", secondArmy->casualties());
-      printf("First army had %i casualties\n", firstArmy->casualties());
+    } else {
+      printf("Second Army gave up with ");
+      printf("\033[0;31m");
+      printf("%i casualties\n", secondArmy->casualties());
+      printf("\033[0m");
+      printf("First army had ");
+      printf("\033[0;31m");
+      printf("%i casualties\n", firstArmy->casualties());
+      printf("\033[0m");
       printf("Battle lasted %i ticks\n", tick);
     }
     // end of loop
