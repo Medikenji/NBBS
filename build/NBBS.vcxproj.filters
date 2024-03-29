@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\NBBS\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\NBBS\army.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\nolan\OneDrive - ROC Alfa-college\SotwareDevelopment\NBBS\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{D6BA3F30-5FC7-32F6-BAC6-6D3276E98030}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

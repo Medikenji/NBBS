@@ -1,0 +1,10 @@
+^C:\USERS\NOLAN\ONEDRIVE - ROC ALFA-COLLEGE\SOTWAREDEVELOPMENT\NBBS\BUILD\CMAKEFILES\3DC09E71917E9DF0DEF58AE2F21DAEDB\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/NBBS" "-BC:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/NBBS/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/NBBS/build/NBBS.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
