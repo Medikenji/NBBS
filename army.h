@@ -9,7 +9,7 @@ public:
   Army(int64_t setAmount, float morale, float training, float weaponQuality);
   int64_t amount;
   int casualties() {
-    if (_setAmount - amount > 0) {
+    if (amount > 0) {
       return _setAmount - amount;
     } else {
       return _setAmount;
