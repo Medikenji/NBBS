@@ -1,3 +1,3 @@
 C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/NBBS/build/CMakeFiles/NBBS.dir
-C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/NBBS/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/NBBS/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/NBBS/build/CMakeFiles/edit_cache.dir
+C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/NBBS/build/CMakeFiles/rebuild_cache.dir

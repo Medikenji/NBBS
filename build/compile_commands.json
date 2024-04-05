@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/NBBS/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++20 -o CMakeFiles\\NBBS.dir\\main.cpp.obj -c \"C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\NBBS\\main.cpp\"",
+  "file": "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/NBBS/main.cpp",
+  "output": "CMakeFiles/NBBS.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/NBBS/build",
+  "command": "C:\\mingw64\\bin\\g++.exe   -g -std=gnu++20 -o CMakeFiles\\NBBS.dir\\army.cpp.obj -c \"C:\\Users\\nolan\\OneDrive - ROC Alfa-college\\SotwareDevelopment\\NBBS\\army.cpp\"",
+  "file": "C:/Users/nolan/OneDrive - ROC Alfa-college/SotwareDevelopment/NBBS/army.cpp",
+  "output": "CMakeFiles/NBBS.dir/army.cpp.obj"
+}
+]
