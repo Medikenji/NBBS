@@ -8,7 +8,7 @@ public:
     void text(const char *text, float *value)
     {
         printf("%s\n", text);
-        scanf("%f", value);
+        scanf_s("%f", value);
     }
     void battleStatus(Army *firstArmy, Army *secondArmy, int firstArmyCasualties, int secondArmyCasualties);
     void battleResults(Army *firstArmy, Army *secondArmy);

@@ -1,3 +1,3 @@
-notes.graphl
-build
+notes.graphml
+# ./build
 CMakeLists.txt

@@ -1,6 +1,6 @@
 #include "army.h"
 
-Army::Army(int64_t setAmount, float morale, float training, float weaponQuality) {
+Army::Army(int setAmount, float morale, float training, float weaponQuality) {
   amount = (setAmount < 1) ? 1 : setAmount;
   _setAmount = amount;
   _morale = (morale < 1) ? 1 : (morale > 100) ? 100

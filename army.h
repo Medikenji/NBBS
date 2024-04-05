@@ -5,8 +5,8 @@
 class Army
 {
 public:
-  Army(int64_t setAmount, float morale, float training, float weaponQuality);
-  int64_t amount;
+  Army(int setAmount, float morale, float training, float weaponQuality);
+  int amount;
   int casualties() {
     if (amount > 0) {
       return _setAmount - amount;
