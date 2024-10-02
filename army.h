@@ -1,38 +1,22 @@
-#include <cstdint>
-#include <iostream>
-#include <math.h>
+#ifndef ARMY_H
+#define ARMY_H
 
-class Army
-{
+#include "soldier.h"
+#include <iostream>
+#include <vector>
+
+class Army {
+  static uint8_t nextArmyNumber;
+
 public:
-  Army(int setAmount, float morale, float training, float weaponQuality);
-  int amount;
-  int casualties() {
-    if (amount > 0) {
-      return _setAmount - amount;
-    } else {
-      return _setAmount;
-    }
-  };
-  void recalculate();
-  float* getCombatPower() { return &_combatPower; };
-  float* getSurvivability() { return &_survivability; };
-  bool checkAlive();
+  Army(uint8_t health, uint8_t _strength, uint8_t _equipment, uint8_t _training, uint32_t amount);
+  ~Army();
+  uint32_t getAmount() { return amount; };
 
 private:
-  // user set variables
-  uint32_t _setAmount;
-  float _morale;
-  float _training;
-  float _weaponQuality;
-  // calculated variables
-  float _defense;
-  float _lethality;
-  float _survivability;
-  float _combatPower;
-  // calculations
-  void calculateDefense();
-  void calculateLethality();
-  void calculateSurvivability();
-  void calculateCombatPower();
+  uint8_t armyNumber;
+  uint32_t amount;
+  std::vector<Soldier *> soldiers;
 };
+
+#endif

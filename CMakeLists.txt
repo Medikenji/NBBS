@@ -7,5 +7,6 @@ set(WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
 add_executable(${PROJECT_NAME}
 main.cpp
 army.cpp
+soldier.cpp
 input.cpp
 )

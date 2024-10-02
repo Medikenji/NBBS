@@ -1,43 +1,29 @@
 #include "army.h"
 
-Army::Army(int setAmount, float morale, float training, float weaponQuality) {
-  amount = (setAmount < 1) ? 1 : setAmount;
-  _setAmount = amount;
-  _morale = (morale < 1) ? 1 : (morale > 100) ? 100
-                                              : morale;
-  _training = (training < 1) ? 1 : (training > 100) ? 100
-                                                    : training;
-  _weaponQuality = (weaponQuality < 1) ? 1 : (weaponQuality > 100) ? 100
-                                                                   : weaponQuality;
-  _defense = 0;
-  _lethality = 0;
-  _survivability = 0;
-  _combatPower = 0;
-  calculateDefense();
-  calculateLethality();
-  calculateSurvivability();
-  calculateCombatPower();
+uint8_t Army::nextArmyNumber = 0;
+
+Army::Army(uint8_t health, uint8_t _strength, uint8_t _equipment, uint8_t _training, uint32_t amount) {
+  this->armyNumber = ++nextArmyNumber;
+  // nextArmyNumber++;
+  if (amount > 25000000) {
+    std::cout << "You can't have more than 25 million soldiers in an army." << std::endl;
+    std::cout << "Amount has been set to 25 million." << std::endl;
+    for (size_t i = 0; i < 25000000; i++) {
+      this->soldiers.push_back(new Soldier(health, _strength, _equipment, _training, 25));
+    }
+  } else {
+    for (size_t i = 0; i < amount; i++) {
+      this->soldiers.push_back(new Soldier(health, _strength, _equipment, _training, 25));
+    }
+  }
+  std::cout << "Army " << (int)this->armyNumber << " has " << this->amount << " soldiers." << std::endl;
+  for (size_t i = 0; i < this->soldiers.size(); i++) {
+    std::cout << "Soldier " << i << " has " << (int)this->soldiers[i]->getHealth() << " health and " << (int)this->soldiers[i]->getStrength() << " strength." << std::endl;
+  }
 }
 
-void Army::recalculate() {
-  calculateDefense();
-  calculateLethality();
-  calculateSurvivability();
-  calculateCombatPower();
-}
-
-bool Army::checkAlive() {
-  return amount > _setAmount - (_setAmount * (_morale * 0.01));
-}
-void Army::calculateDefense() {
-  _defense = (_training * 0.01) * (amount);
-}
-void Army::calculateLethality() {
-  _lethality = (_training * 0.01) * ((_weaponQuality + 50) * 0.01);
-}
-void Army::calculateSurvivability() {
-  _survivability = (_defense * 0.01) * ((pow(0.01 * _morale, 2) * 0.01));
-}
-void Army::calculateCombatPower() {
-  _combatPower = amount * _lethality * ((pow(0.01 * _morale, 2) * 0.01));
+Army::~Army() {
+  for ( size_t i = 0; i < this->soldiers.size(); i++ ) {
+    delete this->soldiers[i];
+  }  
 }
