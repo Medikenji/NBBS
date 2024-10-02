@@ -1,6 +1,9 @@
 #include "soldier.h"
+#include <time.h>
 
 Soldier::Soldier(uint8_t health, uint8_t strength, uint8_t equipment, uint8_t training, uint8_t statNoise) {
+  std::srand(statNoise); // seed random number generator while not being completely random
+
   // initialize soldier stats
   this->_health = health;
   this->_strength = _strength;
